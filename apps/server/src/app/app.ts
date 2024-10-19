@@ -90,6 +90,9 @@ const origin = [env.NX_CLIENT_URL, ...env.NX_CORS_ORIGINS]
 logger.info(`CORS origins: ${origin}`)
 app.use(cors({ origin, credentials: true }))
 app.options('*', cors() as RequestHandler)
+// logger.info('CORS: Allowing all origins')
+// app.use(cors({ origin: '*', credentials: true }))
+// app.options('*', cors() as RequestHandler)
 
 app.set('view engine', 'ejs').set('views', __dirname + '/app/admin/views')
 app.use('/admin', adminRouter)

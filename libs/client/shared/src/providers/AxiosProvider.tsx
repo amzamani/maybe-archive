@@ -68,7 +68,7 @@ function createInstance(options?: CreateInstanceOptions) {
 }
 
 export function AxiosProvider({ children, baseUrl }: PropsWithChildren<{ baseUrl?: string }>) {
-    const API_URL = baseUrl || 'http://localhost:3333'
+    const API_URL = baseUrl || 'https://silver-guacamole-95p6jjgv5xwfxqpq-3333.app.github.dev/'
 
     // Expose a default instance with auth, superjson, headers
     const defaultInstance = useMemo(() => {

@@ -18,12 +18,21 @@ const toOriginArray = (s?: string) => {
 }
 
 const envSchema = z.object({
-    NX_API_URL: z.string().url().default('http://localhost:3333'),
+    NX_API_URL: z
+        .string()
+        .url()
+        .default('https://silver-guacamole-95p6jjgv5xwfxqpq-3333.app.github.dev/'),
     NX_CDN_URL: z.string().url().default('https://staging-cdn.maybe.co'),
     NX_WEBHOOK_URL: z.string().url().optional(),
 
-    NX_CLIENT_URL: z.string().url().default('http://localhost:4200'),
-    NX_CLIENT_URL_CUSTOM: z.string().url().default('http://localhost:4200'),
+    NX_CLIENT_URL: z
+        .string()
+        .url()
+        .default('https://silver-guacamole-95p6jjgv5xwfxqpq-4200.app.github.dev'),
+    NX_CLIENT_URL_CUSTOM: z
+        .string()
+        .url()
+        .default('https://silver-guacamole-95p6jjgv5xwfxqpq-4200.app.github.dev'),
 
     NX_REDIS_URL: z.string().default('redis://localhost:6379'),
 
@@ -43,7 +52,10 @@ const envSchema = z.object({
     NX_POLYGON_TIER: z.string().default('basic'),
 
     NX_PORT: z.string().default('3333'),
-    NX_CORS_ORIGINS: z.string().default('https://localhost.maybe.co').transform(toOriginArray),
+    NX_CORS_ORIGINS: z
+        .string()
+        .default('https://silver-guacamole-95p6jjgv5xwfxqpq-4200.app.github.dev')
+        .transform(toOriginArray),
 
     NX_MORGAN_LOG_LEVEL: z
         .string()
